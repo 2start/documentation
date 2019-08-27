@@ -40,11 +40,17 @@ Refer to the article [Memory Size Recommendations](../about/ocular-memory-size.m
 
 ## Updating ShiftLeft Ocular
 
-You can determine your current version of ShiftLeft Ocular by using the `version` command. To update ShiftLeft Ocular:
+You can determine your current version of ShiftLeft Ocular by using the `version` command. 
+
+It is recommended that if you have custom policies or CPGs with additional layers, that you backup these files up before updating.
+
+To update ShiftLeft Ocular:
 
 1. Repeat steps 1 - 4 from above. 
 
-2. Specify how you want the update to proceed. Enter either `y` to replace an existing ShiftLeft Ocular installation, `n`to not replace the existing installation, `A`to install all ShiftLeft Ocular files, `N` to install no ShiftLeft Ocular files, or `r` to rename the installation directory.
+2. Specify if you want the existing ShiftLeft Ocular installation deleted before installing the new version.
+
+3. how you want the update to proceed. Enter either `y` to replace an existing ShiftLeft Ocular installation, `n`to not replace the existing installation, `A`to install all ShiftLeft Ocular files, `N` to install no ShiftLeft Ocular files, or `r` to rename the installation directory.
 
 ## Uninstalling ShiftLeft Ocular
 
