@@ -1,4 +1,4 @@
-# Installing and Updating ShiftLeft Ocular
+# Installing, Updating and Uninstalling ShiftLeft Ocular
 
 Before installing or updating ShiftLeft Ocular, make sure you have [met all requirements](../../introduction/requirements.md). In addition, for large applications, you may want to optimize ShiftLeft Ocular performance through the appropriate combination of [memory and disk sizes](../about/ocular-memory-size.md).
 
@@ -43,3 +43,13 @@ You can determine your current version of ShiftLeft Ocular by using the `version
 1. Repeat steps 1 - 4 from above. 
 
 2. Specify how you want the update to proceed. Enter either `y` to replace an existing ShiftLeft Ocular installation, `n`to not replace the existing installation, `A`to install all ShiftLeft Ocular files, `N` to install no ShiftLeft Ocular files, or `r` to rename the installation directory.
+
+## Uninstalling ShiftLeft Ocular
+
+Use the command 
+
+```
+rm -rf ~/bin/ocular
+```
+
+to unistall ShiftLeft Ocular. Everything related to ShiftLeft Ocular is contained in this directory, and are removed.
