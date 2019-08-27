@@ -54,4 +54,4 @@ Use the command
 rm -rf ~/bin/ocular
 ```
 
-to unistall ShiftLeft Ocular. Everything related to ShiftLeft Ocular is contained in this directory, and are removed.
+to unistall ShiftLeft Ocular from the default directory. Everything related to ShiftLeft Ocular is contained in this directory, and is removed.
