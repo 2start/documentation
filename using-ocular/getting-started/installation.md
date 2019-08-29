@@ -42,7 +42,7 @@ Refer to the article [Memory Size Recommendations](../about/ocular-memory-size.m
 
 You can determine your current version of ShiftLeft Ocular by using the `version` command. 
 
-It is recommended that if you have custom policies or CPGs with additional layers, that you backup these files up before updating. Also, make sure that you have deleted the `ocular-distribution` folder of the previous version from your system. 
+It is recommended that if you have custom policies or have extended the CPG (for example with additional layers), that you backup these files up before updating. Also, make sure that you have deleted the `ocular-distribution` folder of the previous version from your system. 
 
 To update ShiftLeft Ocular:
 
