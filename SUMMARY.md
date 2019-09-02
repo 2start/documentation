@@ -37,6 +37,7 @@
   * Tutorials
     * [Scanning for Deserialization Sinks](using-ocular/tutorials/deserialization.md)
     * [Analyzing a C Language Application](using-ocular/tutorials/c-language.md)
+    * [Identifying Incorrect or Zero Memory Allocation Bugs in C](using-ocular/tutorials/c-allocation-bugs.md)
     * [Using ShiftLeft Ocular with MISRA C Applications](using-ocular/tutorials/misra-c.md)
     * [Java Vulnerable Lab](using-ocular/tutorials/java-vuln.md)
     * [Using ShiftLeft Ocular with JSP](using-ocular/tutorials/jsp.md)
