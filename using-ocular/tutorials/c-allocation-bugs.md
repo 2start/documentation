@@ -1,6 +1,6 @@
 # Identifying Incorrect or Zero Memory Allocation Bugs in C
 
-A common heap related bug is arithmetic operations that are performend on parameter of memory allocation functions, such as malloc(). In certain cases, the arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists, using three allocation scenarios.
+A common heap related bug is arithmetic operations that are performed on parameter of memory allocation functions, such as malloc(). In certain cases, the arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists, using three allocation scenarios.
 
 ## allocation.c
 
@@ -131,7 +131,7 @@ var source = cpg.method.parameter
 This query defines a source by:
 
 1. Examining all call sites of all methods.
-2. Filtering out the methods having malloc (sink of interest) and any arithmetic oepration.
+2. Filtering out the methods having malloc (sink of interest) and any arithmetic operation.
 3. Making the source a return (methodReturn) of the actual methods of the call sites, which are `atoi` and `getnumber`. 
 4. Find flows from the methods to the malloc call site argument as sink.      
 
@@ -183,7 +183,7 @@ You can use passes and passesNot to check if operations were performed on the ma
 
 ## CFG Analysis
 
-Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query of listing all callsites) and then look at the CFG, listing expressions, linenumbers, etc. 
+Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query of listing all call sites) and then look at the CFG, listing expressions, line numbers, etc. 
 
 ```
 ocular> cpg.method.callOut.name("malloc").filter(_.lineNumber(23)).repeat(_.cfgPrev).emit().map( x=> (x.code, x.location.filename, x.lineNumber.get)).l 
