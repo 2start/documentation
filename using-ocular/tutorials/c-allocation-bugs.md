@@ -1,10 +1,10 @@
 # Identifying Incorrect or Zero Memory Allocation Bugs in C
 
-A common heap related bug is arithmetic operations that are performed on parameter of memory allocation functions, such as malloc(). In certain cases, the arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists, using three allocation scenarios.
+A common heap related bug is arithmetic operations that are performed on parameter of memory allocation functions, such as `malloc()`. In certain cases, the arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists, using three allocation scenarios shown in
 
-## allocation.c
+## `allocation.c`
 
-``
+```C
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -30,13 +30,13 @@ void *scenario3() {
     void *p = malloc(a);                                                                                                                                                                      
     return p;
 }
-``
+```
 
 ## Analysis
 
-First, identify the call sites of malloc in the code. There are three call sites in this example
+First, identify the call sites of `malloc` in the code. There are three call sites in this example
 
-```
+```scala
 cpg.method.callOut.name("malloc").map(x => (x.location.filename, x.lineNumber.get)).l
 
 List[(String, Integer)] = List(
@@ -46,7 +46,7 @@ List[(String, Integer)] = List(
 )
 ```
 
-## atoi Case 
+### `atoi` Case 
 
 The following query examines dataflow from return of atoi to argument of malloc, at all malloc call sites:
 
@@ -93,7 +93,7 @@ sink.reachableBy(source).flows.passes(".*(multiplication|addition).*").p
 The query returns the same flow above if the condition is true.
 
 
-## Arithmetic Operation
+### Verifying Arithmetic Operations
 
 The following query looks for a parameter of some function to argument of malloc, at all malloc call sites while passing through an arithmetic operation
 
@@ -126,13 +126,13 @@ var source = cpg.method.parameter
 ```
 
 
-## Filtering Out Sink of Interest
+## Generalizing the Query using Filters
 
 This query defines a source by:
 
 1. Examining all call sites of all methods.
 2. Filtering out the methods having malloc (sink of interest) and any arithmetic operation.
-3. Making the source a return (methodReturn) of the actual methods of the call sites, which are `atoi` and `getnumber`. 
+3. Making the source a return (methodReturn) of the actual methods of the call sites (which are `atoi` and `getnumber` here). 
 4. Find flows from the methods to the malloc call site argument as sink.      
 
 ```
@@ -178,12 +178,12 @@ The query returns
  | a          | 23        | scenario3            | ../../Projects/tarpitc/src/alloc/allocation.c|
 ```
 
-You can use passes and passesNot to check if operations were performed on the malloc argument.
+You can use `passes` and `passesNot` to check if operations were performed on the malloc argument just as in previous queries to filter further.
 
 
-## CFG Analysis
+## Advanced CFG Analysis
 
-Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query of listing all call sites) and then look at the CFG, listing expressions, line numbers, etc. 
+Use this query to examine a specific malloc call site (specifically line 23, obtained from the first query of listing all call sites) and then look at the CFG, listing expressions, line numbers, etc. to reach the source backwards while navigating the CPG. This usually is a one-off analysis to reach the source variable by listing code expressions (here it's `a`) while tracing backwards. 
 
 ```
 ocular> cpg.method.callOut.name("malloc").filter(_.lineNumber(23)).repeat(_.cfgPrev).emit().map( x=> (x.code, x.location.filename, x.lineNumber.get)).l 
