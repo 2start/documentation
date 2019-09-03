@@ -6,6 +6,8 @@ A build in your CI-CD pipeline can be automatically tagged based on ShiftLeft In
 
 * At least one occurrence of a specific type of vulnerability is present in the source code.
 
+Once you have tagged a build, the build is shown in the Version drop-down menu (you may need to refresh first), allowing you to view the analysis results for that specific build.
+
 **The process of specifying a build rule is**:
 
 1. [Create a filter that defines the tag criteria](filter-results.md#creating-a-filter).
