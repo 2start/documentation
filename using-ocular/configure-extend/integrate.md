@@ -15,6 +15,13 @@ This article provides information on
 
 ## Encapsulating Results in a Script for Your CI/CD Pipeline
 
+Encapsulating ShiftLeft Ocular results in a script, and appending it to your CI/CD pipeline, enables you to measure improvements in results across releases.
+
+When you start ShiftLeft Ocular, append the following command
+
+```
+./ocular.sh --script scripts.automate.sc --params jarFile=[location and name of app],outputFile=out.log
+```
 
 ## Automatically Creating an Issue in GitHub
 
