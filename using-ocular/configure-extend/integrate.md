@@ -20,19 +20,27 @@ Encapsulating ShiftLeft Ocular results in a script, and appending it to your CI/
 Deploy this command in your build system or any other system in your pipelie
 
 ```
-./ocular.sh --script scripts.automate.sc --params jarFile=[location and name of app],outputFile=out.log
+./ocular.sh --script scripts.automate.sc --params jarFile=[<path>],outputFile=out.log
 ```
+
+where `path` is the location and filename your application.
 
 The command:
 
 1. Executes ShiftLeft Ocular.
 2. Encapsulates the results in a script.
 3. Passes the script into a JAR file.
-4. Get output.
+4. Outputs the results.
 
 ## Automatically Creating an Issue in GitHub
 
-You can create an issue in GitHub, using the data resulting from your ShiftLeft Ocular investigation, to influence your code review process.
+You can create an issue in GitHub, using the data resulting from your ShiftLeft Ocular investigation, to influence your code review process. Use the convenience function
+
+globals.createIssueInGitHub(flowString, globals.accessToken, globals.owner, "<title text>, "<summary text>")
+  
+where `text` is the title and summary of the GitHub issue.
+
+For example,
 
 globals.createIssueInGitHub(flowString, globals.accessToken, globals.owner, "tarpit", "Time/Logic bomb detected. Fix before it detonates")
 
