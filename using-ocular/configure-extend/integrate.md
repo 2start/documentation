@@ -9,11 +9,11 @@ You can integrate ShiftLeft Ocular with the 3rd party apps to make results avail
 
 This article provides information on
 
-* [Encapsulating Results in a Script for Your CI/CD Pipeline](#encapsulating-results-in-a-script-for-your-ci/cd--pipeline)
+* [Encapsulating Results in a Script for Your CI and CD Pipeline](#encapsulating-results-in-a-script-for-your-ci-and-cd--pipeline)
 * [Automatically Creating an Issue in GitHub](#automatically-creating-an-issue-in-github)
 * [Debugging ShiftLeft Ocular Scripts with JDB](#debugging-shiftleft-ocular-scripts-with-jdb)
 
-## Encapsulating Results in a Script for Your CI/CD Pipeline
+## Encapsulating Results in a Script for Your CI and CD Pipeline
 
 Encapsulating ShiftLeft Ocular results in a script, and appending it to your CI/CD pipeline, enables you to measure improvements in results across releases.
 
