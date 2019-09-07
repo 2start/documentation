@@ -1,7 +1,7 @@
 # Filtering Analysis Results
 
 Instead of scrolling through a list of analysis results, you can more quickly find results of interest by filtering 
-using multiple criteria. Filters can also be saved and reused, and as the basis for a default view or a build rule. You can
+using multiple criteria. Filters can also be saved and reused, and as the basis for a build rule. You can
 
 * [Create a filter](#creating-a-filter)
 * [Save a filter](#saving-a-filter)
@@ -41,7 +41,7 @@ searches for all Critical vulunerabilities that are of the type Sensitive Data L
 
 ## Saving a Filter
 
-Filters can be saved for future and repeated use. You can also use a saved filter as a default view or a [build rule to automatically fail a build in your CI-CD pipeline based on ShiftLeft Inspect's results](fail-build.md).
+Filters can be saved for future and repeated use. You can also use a saved filter as a [build rule to automatically fail a build in your CI-CD pipeline based on ShiftLeft Inspect's results](fail-build.md).
 
 **To save a filter**:
 
