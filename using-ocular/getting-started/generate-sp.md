@@ -4,6 +4,8 @@ Look at definition in Terminology
 
 Also need info on Security Profile for Runtime (SPR)
 
+Link to General topic in Profiles and Policies
+
 # Generating and Working with Security Profiles
 
 Automatic Code Scanning through Security Profiles/ Security Profiles are dervied from Policies, and summarize the  vulnerabilities and data leaks present in the code. The Security Profile is a [layer](https://ocular.shiftleft.io/api/io/shiftleft/repl/cpgcreation/Overlays$.html) of the CPG. Unlike other default layers, the Security Profile must be intentially generated. Security Profiles can be explored and processed using the REPL and managed in a workspace.
