@@ -43,7 +43,7 @@ None | `https_proxy=<proxy>` | Proxy configuration.
 `--dotnet-core` | | Use .NET Core. (Only valid for C#.)
 `--dotnet-framework` | | Use .NET Framework. (Only valid for C#.)
 `--shiftleft-json-file` | `SHIFTLEFT_JSON_FILE=<path>` | Path of Microagent configuration file `shiftleft.json`. Defaults to `shiftleft.json` (in the current working directory).
-`--version-id <id>` | | Sets the version field of the SPR ID that's written to the config file.
+`--version-id <id>` | | Sets the version field of the [Security Profile for Runtime](../../profies/about-policy.md) (SPR) ID that's written to the config file.
 
 ## `sl run` Options
 
