@@ -14,7 +14,7 @@ The ShiftLeft Protect for Java Microagent supports various configuration mechani
 
 ### JSON
 
-You can configure the Microagent using the JSON file named `shiftleft.json` located in the working directory with the application binary. This file is generated when you run `sl analyze`.
+You can configure the Microagent using the JSON file named `shiftleft.json` located in the working directory with the application binary. This file is generated when you run ShiftLeft Inspect.
 
 Syntax: Must conform to the ShiftLeft format.
 
@@ -72,9 +72,9 @@ As an alternative to providing a `shiftleft.json` file, the `accessToken` and `s
 
 The accessToken property represents the client access token that authorizes the Microagent to use ShiftLeft services.
 
-### SPR ID
+### Security Profile for Runtime (SPR) ID
 
-The SPR ID property identifies the Security Profile for Runtime (SPR) to fetch from the proxy.
+The SPR ID property identifies the [SPR](../../../policies/about-policy.md) to fetch from the proxy.
 
 ```json
 {
