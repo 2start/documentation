@@ -60,6 +60,7 @@
      * [Securing Your Applications Using ShiftLeft Protect](using-inspect-protect/protect/securing-applications.md)
      * [Running ShiftLeft Protect](using-inspect-protect/protect/run-protect.md)
      * [Configuring the Microagent](using-inspect-protect/protect/configuring-the-microagent.md)
+     * [Using in Monitor Mode](using-inspect-protect/protect/monitoring-mode.md)
      * ShiftLeft Protect for Java
        * [JVM Based Environments](using-inspect-protect/protect/protect-java/jvm-based-environments.md)
        * [Tomcat Integration](using-inspect-protect/protect/protect-java/tomcat-integration.md)
