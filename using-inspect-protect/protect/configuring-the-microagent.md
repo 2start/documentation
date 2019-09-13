@@ -59,7 +59,11 @@ Configure the Microagent using process environment variables passed to the JVM b
 
 `SHIFTLEFT_PROP_NAME="prop-value"`
 
-For example, process environment variables passed to the JVM can be set in bash as 
+For example, you can use the `SHIFTLEFT_CONFIG` environment variable to pass to ShiftLeft Protect the path of the [`shiftleft.json` file](securing-applications.md)
+
+`$ SHIFTLEFT_CONFIG=/home/myhome/shiftLeftFiles/shiftleft.json sl run -- <....>`
+
+Another example is passing process environment variables to the JVM by setting in bash as 
 
 ```bash
 export SHIFTLEFT_LOG_LEVEL=DEBUG 
