@@ -3,7 +3,7 @@
 ShiftLeft Protect secures applications against exploitation of vulnerabilities by leveraging "code informed" insights discovered by [ShiftLeft Inspect](../../introduction/products.md). ShiftLeft Protect creates runtime security specifications based on these identified vulnerabilities by
 
 1. Deploying the [ShiftLeft Protect Microagent](#shiftleft-protect-microagent).
-2. Using the the [`shiftleft.json` file](#the-shiftleft.json-file) to identify the appropriate Security Profile for Runtime (SPR). 
+2. Using the [ShiftLeft JSON file](#shiftleft-json-file) to identify the appropriate Security Profile for Runtime (SPR). 
 3. Connecting to the ShiftLeft Proxy Server to download the SPR. 
 4. Using the ShiftLeft Proxy Server to send events and metrics to the [ShiftLeft Dashboard](../using-dashboard/vulnerability-dashboard.md).
 
@@ -13,7 +13,7 @@ ShiftLeft Protect secures applications against exploitation of vulnerabilities b
 
 The Microagent is deployed in-memory alongside your runtime application. The Microagent protects the residual issues in production and is customized to your application's specific shape and weaknesses. 
 
-### The shiftleft.json File
+### The ShiftLeft JSON File
 
 ShiftLeft Inspect generates the `shiftleft.json` file as part of the process of analyzing your application. This file includes the parameters `accessToken` and `sprId`, which are required by ShiftLeft Protect. 
 
