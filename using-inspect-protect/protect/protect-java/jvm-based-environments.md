@@ -49,6 +49,161 @@ The `sprId` is a string containing three main parts: organization ID, applicatio
 
 If you are using a SCM system such as Git, when you reanalyze the app after changing the code the commit hash changes, indicating a new version of the app is built. In this case you must redeploy the app with the Microagent using the updated `shiftleft.json` file. 
 
+## Strictness
+
+The strictness setting determines how the Microagent behaves if there is a disconnection between it and the proxy server. The ShiftLeft Protect for Java Microagent runs in two modes: non-strict (default) and strict.
+
+In non-strict mode (default), the Microagent does not require the SPR at startup. In this case the app starts but may not be monitored by ShiftLeft, or in case it is, metrics generated during disconnection are ignored.
+
+In strict mode (`"strict":"true"`) the Microagent requires the SPR to let the application run. If the Microagent loses connection with the proxy, the application methods calling the proxy are paused until connection is reestablished.
+
+Parameter | Name
+--- | ---
+JSON | `strict`
+JVM | `-Dshiftleft.strict`
+Environment Variable | `SHIFTLEFT_STRICT`
+
+### Strictness Values
+
+- `false` (default): Proxy availability is not required. Event notifications can be lost and the application can run without instrumentation (if the proxy did not respond with the SPR at startup).
+- `true`: Agent pauses the execution of the program until connection with the proxy is established and the SPR is passed to the Microagent.
+
+The default strictness mode is false.
+
+## ShiftLeft Proxy
+
+The Microagent connects to a ShiftLeft Proxy server to obtain the SPR and push runtime metrics to ShiftLeft. The following options are available for microagent-proxy connections.
+
+There is an idle timeout of approximately 40-60 minutes for the connection between the ShiftLeft Protect for Java Microagent and Proxy server. If the Microagent agent is idle for this period, the connection may be dropped. The Microagent  automatically reconnects when the app is run.
+
+>**Important**. ShiftLeft Proxy is not to be confused with system proxy configuration.
+
+### Proxy Host Name
+
+Proxy host name or IP address.
+
+Parameter | Name
+--- | ---
+JSON | `slProxy.host`
+JVM | `-Dshiftleft.sl.proxy.host=`
+Environment Variable | `SHIFTLEFT_SL_PROXY_HOST`
+
+### Proxy Port
+
+Proxy listening TCP port.
+
+Parameter | Name
+--- | ---
+JSON | `slProxy.port`
+JVM | `-Dshiftleft.sl.proxy.port`
+Environment Variable | `SHIFTLEFT_SL_PROXY_PORT`
+
+## Logging
+
+This section describes configuration options for logging Microagent activity.
+
+### Log Levels
+
+Log level determines the level of detail that the Microagent logger outputs.
+
+Parameter | Name
+--- | ---
+JSON | `log.level`
+JVM | `-Dshiftleft.log.level`
+Environment Variable | `SHIFTLEFT_LOG_LEVEL`
+
+**Log Level Values** (from most to least logging information)
+- `TRACE`: Finest level. Useful for technical debugging. Not for use in production environments.
+- `DEBUG`: Detailed level. Useful for debugging. Not for use in production environments.
+- `INFO`: Reasonable informative level. Returns information relevant to the user.
+- `WARNING`: Warning informative level.
+- `ERROR`: Show only errors.
+- `QUIET`: (default) Does not create a log file. Logging is redirected to the app `stderr`.
+
+### Log Files
+
+Used to write logs to file system. Denotes the file name pattern for a rolling set of logs files. If not specified, Microagent logs are redirected to target application `stderr`.
+
+Parameter | Name
+--- | ---
+JSON | `log.file`
+JVM | `-Dshiftleft.log.file`
+Environment Variable | `SHIFTLEFT_LOG_FILE`
+
+### Rolling Log Files
+
+Number of files to use in the rolling file set. Only used if logging to file system.
+
+Parameter | Name
+--- | ---
+JSON | `log.maxFiles`
+JVM | `-Dshiftleft.log.max.files`
+Environment Variable | `SHIFTLEFT_LOG_MAX_FILES`
+
+### Log File Size
+
+Size limit per log file, in bytes. Only used if logging to file system.
+
+Parameter | Name
+--- | ---
+JSON | `log.maxFileBytes`
+JVM | `-Dshiftleft.log.max.file.bytes`
+Environment Variable | `SHIFTLEFT_LOG_MAX_FILE_BYTES`
+
+## Security
+
+This section contains configuration parameters relative to the detection and blocking capabilities of the Microagent.
+
+### Mode
+
+Security mode that determines how the Microagent respond to attacks (malicious external payloads).
+
+Parameter | Name
+--- | ---
+JSON | `sec.mode`
+JVM | `-Dshiftleft.sec.mode`
+Environment Variable | `SHIFTLEFT_SEC_MODE`
+
+Values:
+- `REPORT`(default): Do not alter application behavior, just report the detected attacks
+- `BLOCK`: Block application execution when attacks are found, by throwing a java.lang.SecurityException, and report the attack
+
+### XXE
+
+Type of protection to adopt when parsing XML documents of non trusted origin.
+
+Parameter | Name
+--- | ---
+JSON | `sec.xxe`
+JVM | `-Dshiftleft.sec.xxe`
+Environment Variable | `SHIFTLEFT_SEC_XXE`
+
+Values:
+  - `OFF`: No XXE protection (default)
+  - `DTD`: Disable DTDs completely. Almost all XML entity attacks are prevented including denial of services (DOS) attacks such as Billion Laughs.
+  - `EXTERNAL`: Disable only external DTDs and entities. This protects against XXE attacks but not against denial of services (DOS) attacks such as Billion Laughs.
+
+### Collect Attack Information
+
+Enables collecting full payloads of attack events. This might include sensitive information, which is stored encrypted. Disabled by default.
+
+Parameter | Name
+--- | ---
+JSON | `sec.collect.attack.info`
+JVM | `-Dshiftleft.sec.collect.attack.info`
+Environment Variable | `SHIFTLEFT_SEC_COLLECT_ATTACK_INFO`
+
+ Values:
+  - `true`: Attack payloads are collected and sent to ShiftLeft's infrastructure for viewing in the [Vulnerability Dashboard Event Viewer](../../../using-inspect-protect/using-workflow/vulnerability-dashboard.md#event-details).
+  - `false`: (default)
+
+## HTTPS Proxy Configuration
+
+The ShiftLeft Protect for Java Microagent supports the commonly used environment variable `https_proxy` for configuring a HTTPS proxy.
+
+```bash
+export https_proxy="http://[$user:$password@]$host:$port"
+```
 ## Analyzing the Application
 
 Before running the Microagent, analysis of the target application using ShiftLeft Inspect must be performed. This allows ShiftLeft Protect to generate instrumentation custom tailored to the specific version of the application.
