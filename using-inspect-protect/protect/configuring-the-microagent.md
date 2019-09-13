@@ -39,6 +39,8 @@ For example, to configure the proxy and log level using the `shiftleft.json` fil
 }
 ```
 
+Refer to the the [`shiftleft.json` File](protect-java/json-file.md) article for more information.
+
 ### Java Properties
 
 Configure the Microagent using Java system properties specified as arguments to the JVM command. The syntax is
