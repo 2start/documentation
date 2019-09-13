@@ -2,7 +2,9 @@
 
 Running ShiftLeft Protect is different for Java or .NET Framework applications. Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md). 
 
-You may also want to [configure the ShiftLeft Microagent](../protect/configuring-the-microagent.md) for your environment.
+Once your application is running with ShiftLeft Protect, activity is shown on the [ShiftLeft Dashboard](..using-dashboard/vulnerability-dashboard.md).
+
+You may also want to [configure the ShiftLeft Protect Microagent](../protect/configuring-the-microagent.md) for your environment.
 
 ## Running ShiftLeft Protect for Java Applications
 
@@ -26,8 +28,6 @@ where
 `--analyze <jar>`. (Optional) Use if you want your application to be analyzed at runtime. Points to your application's JAR.
 
 `-- <delimits flags>`.  From the command to be wrapped. 
-
-Once your application is running with ShiftLeft Protect, activity is shown on the [ShiftLeft Dashboard](../using-workflow/vulnerability-dashboard.md).
 
 ## Running ShiftLeft Protect for .NET Framework Applications
 
