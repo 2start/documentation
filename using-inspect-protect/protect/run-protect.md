@@ -2,7 +2,7 @@
 
 Running ShiftLeft Protect is different for Java or .NET Framework applications. Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md). 
 
-Once your application is running with ShiftLeft Protect, runtime information is periodically pushed to the proxy server and  displayed as data and metrics in the [ShiftLeft Dashboard](../../using-dashboard/vulnerability-dashboard.md).
+Once your application is running with ShiftLeft Protect, runtime information is periodically pushed to the ShiftLeft Proxy Server and displayed as data and metrics in the [ShiftLeft Dashboard](../../using-dashboard/vulnerability-dashboard.md).
 
 You may also want to [configure the ShiftLeft Protect Microagent](../protect/configuring-the-microagent.md) for your environment.
 
