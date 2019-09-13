@@ -62,7 +62,7 @@
      * [Configuring the Microagent](using-inspect-protect/protect/configuring-the-microagent.md)
      * [Using in Monitor Mode](using-inspect-protect/protect/monitoring-mode.md)
      * ShiftLeft Protect for Java
-       * [JVM Based Environments](using-inspect-protect/protect/protect-java/jvm-based-environments.md)
+       * [The `shiftleft.json` File](using-inspect-protect/protect/protect-java/json-file.md)
        * [Tomcat Integration](using-inspect-protect/protect/protect-java/tomcat-integration.md)
        * [Websphere Configuration](using-inspect-protect/protect/protect-java/websphere-configuration.md)
        * [Wildfly Configuration](using-inspect-protect/protect/protect-java/wildfly-configuration.md)
