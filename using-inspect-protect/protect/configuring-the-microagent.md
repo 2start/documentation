@@ -1,6 +1,8 @@
 # Configuring the ShiftLeft Protect Microagent
 
-The ShiftLeft Protect Microagent runs out-of-the-box with default settings. Optionally you can configure the Microagent for your specific environment.
+The ShiftLeft Protect Microagent is run with an application that has been analyzed by ShiftLeft Inspect. The Microagent is a lightweight agent that runs in-memory with an application (in production or other environments such as staging, test, UAT) you want to monitor and protect. 
+
+The Microagent runs out-of-the-box with default settings. Optionally you can configure the Microagent for your specific environment.
 
 These setting are different for Java or .NET Framework applications. Information on configuring the Microagent for Java is provided here. [Contact us](https://www.shiftleft.io/contact/) if you want to configure the Microagent for .NET Framework.
 
