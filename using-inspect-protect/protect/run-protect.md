@@ -2,12 +2,15 @@
 
 Running ShiftLeft Protect is different for Java or .NET Framework applications. Before using ShiftLeft Protect, make sure you have met all [product requirements](../../introduction/requirements.md). 
 
+You may also want to [configure the ShiftLeft Microagent](../protect/configuring-the-microagent.md) for your environment.
+
 ## Running ShiftLeft Protect for Java Applications
 
-For Java applications, the required ShiftLeft Inspect code analysis can be performed either as a [separate step before runtime](../inspect/analyzing-applications.md), or as part of the process of running ShiftLeft Protect. 
-When you analyze your code as part of the process of running ShiftLeft Protect, ShiftLeft first submits your application to the cloud for analysis and waits for the analysis to finish before starting ShiftLeft Protect, which may take a few minutes.
+For Java applications, the required ShiftLeft Inspect code analysis can be performed either as a [separate step before runtime](../inspect/analyzing-applications.md), or at runtime as part of the process of running ShiftLeft Protect. 
 
-In order to run your application with ShiftLeft Protect, prefix the command line to start your application with `sl run`, specifically
+When you analyze your code at runtime, ShiftLeft first submits your application to the cloud for analysis. If analysis has previously been performed on this version of the application, then no further analysis is performed and the application is started immediately. Otherwise, analysis takes place before starting ShiftLeft Protect, and therefore it may take a few minutes for the application to start.
+
+You use the [ShiftLeft Command Line Interface (CLI)](../using-cli/cli-reference.md) to run your application with ShiftLeft Protect, specifically
 
 ```
 sl run \
@@ -18,15 +21,13 @@ sl run \
 
 where
 
-`--app <name>` specifies a unique name for your application.
+`--app <name>`. Specifies your applications unique name.
 
-`--analyze <jar>` points the ShiftLeft CLI (i.e. `sl`) at your application's JAR so that the application is analyzed before starting up.
+`--analyze <jar>`. (Optional) Use if you want your application to be analyzed at runtime. Points to your application's JAR.
 
-`-- <delimits flags>` from the command to be wrapped. This is the command used to run ShiftLeft Protect.
+`-- <delimits flags>`.  From the command to be wrapped. 
 
-Once your application is running with ShiftLeft Protect, activity is shown on the ShiftLeft Dashboard.
-
-For additional information, refer to [Configuring the ShiftLeft Protect Microagent for Java](../protect/protect-java/configuring-the-microagent.md).
+Once your application is running with ShiftLeft Protect, activity is shown on the [ShiftLeft Dashboard](../using-workflow/vulnerability-dashboard.md).
 
 ## Running ShiftLeft Protect for .NET Framework Applications
 
