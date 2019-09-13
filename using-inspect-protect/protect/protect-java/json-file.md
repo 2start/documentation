@@ -1,18 +1,6 @@
-# JVM Based Environments
-
-The ShiftLeft Protect Microagent is run with an application that has been analyzed by ShiftLeft. The Microagent is a lightweight agent that runs in-memory within the JVM of each application (in production or other environments such as staging, test, UAT) you want to monitor and protect using ShiftLeft. Once started, the Microagent periodically pushes runtime information to the proxy server and displays data and metrics in the [ShiftLeft Dashboard](../../using-dashboard/vulnerability-dashboard.md).
-
-## Configuration Options
-
-The ShiftLeft Microagent for Java runs out-of-the-box with default settings. See [Configuring the Microagent](configuring-the-microagent.md) for details on configuration options.
+# The `shiftleft.json` File
 
 
-## Requirements
-
-To run the Microagent, you must:
-
-* Use a [supported 64-bit JVM](../../../introduction/requirements.md)
-* Analyze the application using ShiftLeft Inspect.
 
 ## Required Parameters
 
