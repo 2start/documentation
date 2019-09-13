@@ -21,11 +21,11 @@ If you analyze your application using ShiftLeft Inspect as a [separate step befo
 
 Note that if you are using a SCM system such as Git, when you reanalyze your application after code changes, the commit hash of the `sprId` parameters changes. This changed commit hash indicates that a new version of the application is built. Since you now have a new appliation version, you must redeploy your application with the Microagent using the updated `shiftleft.json` file. 
 
-### `accessToken`
+#### `accessToken`
 
 The `accessToken` property represents the client access token that authorizes ShiftLeft Protect to use ShiftLeft services.
 
-### `sprId`
+#### `sprId`
 
 The `sprId` property identifies the [Security Profile for Runtime (SPR)](../../../policies/about-policy.md) for your application. 
 
@@ -42,13 +42,11 @@ The `sprId` is a string containing three main parts: organization ID, applicatio
 "sprId": "sl/418a892e-32fe-4d6e-b0cd-a44c24026b7a/org.springframework-my-rest-service-jar/f0e2bafa21a5790b1d70f6309189de6a1c888e16/baseline"
 ```
 
-### ShiftLeft Protect Microagent
+### The ShiftLeft Proxy Server
 
-The ShiftLeft Proxy Server
+The Microagent connects to the ShiftLeft Proxy server to obtain the SPR and push runtime metrics to the ShiftLeft Dashboard. The following options are available for Microagent-proxy connections.
 
-The Microagent connects to the ShiftLeft Proxy server to obtain the Security Profile for Runtime (SPR) and push runtime metrics to the ShiftLeft Dashboard. The following options are available for Microagent-proxy connections.
-
-There is an idle timeout of approximately 40-60 minutes for the connection between the Microagent and Proxy server. If the Microagent agent is idle for this period, the connection may be dropped. The Microagent automatically reconnects when the application is run.
+Note that rhere is an idle timeout of approximately 40-60 minutes for the connection between the Microagent and Proxy server. If the Microagent agent is idle for this period, the connection may be dropped. The Microagent automatically reconnects when the application is run.
 
 >**Important**. The ShiftLeft Proxy Server is not to be confused with system proxy configuration.
 
@@ -71,6 +69,3 @@ Parameter | Name
 JSON | `slProxy.port`
 JVM | `-Dshiftleft.sl.proxy.port`
 Environment Variable | `SHIFTLEFT_SL_PROXY_PORT`
-
-
-The Microagent protects the residual issues in production and is customized to your application's specific shape and weaknesses through the use of a Security Profile for Runtime (SPR). Each Microagent connects to a ShiftLeft Proxy server to download the SPR and to send events and metrics to the ShiftLeft Dashboard.
