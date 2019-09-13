@@ -2,7 +2,7 @@
 
 The ShiftLeft Protect Microagent runs out-of-the-box with default settings. Optionally you can configure the Microagent for your specific environment.
 
-These setting are different for Java or .NET Framework applications. Information on configuring the Microagent for Java is provided here. [Contact us]((https://www.shiftleft.io/contact/) if you want to configure the Microagent for .NET Framework.
+These setting are different for Java or .NET Framework applications. Information on configuring the Microagent for Java is provided here. [Contact us](https://www.shiftleft.io/contact/) if you want to configure the Microagent for .NET Framework.
 
 ## Defaults Settings for Java
 
