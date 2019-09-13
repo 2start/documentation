@@ -14,6 +14,41 @@ To run the Microagent, you must:
 * Use a [supported 64-bit JVM](../../../introduction/requirements.md)
 * Analyze the application using ShiftLeft Inspect.
 
+## Required Parameters
+
+If analysis has been performed as a separate step, then the `accessToken` and `sprId` parameters are required by the Microagent and must be passed using the `shiftleft.json` file that is generated during `analyze` by including it in the working directory with the app JAR file that you are deploying with the Microagent.
+
+As an alternative to providing a `shiftleft.json` file, the `accessToken` and `sprId` can be provided via the environment variables `SHIFTLEFT_ACCESS_TOKEN` and `SHIFTLEFT_SPR_ID`, respectively.
+
+### Access Token
+
+The accessToken property represents the client access token that authorizes the Microagent to use ShiftLeft services.
+
+### Security Profile for Runtime (SPR) ID
+
+The SPR ID property identifies the [SPR](../../../policies/about-policy.md) to fetch from the proxy.
+
+```json
+{
+  "accessToken": "${access-token-string}",
+  "sprId": "${sprd-id}"
+}
+```
+
+> **Important**. The required parameters `accessToken` and `sprId` must be passed using `shiftleft.json`. They cannot be passed using Java properties or environment variables. In addition, the `shiftleft.json` file must be located in the project directory where the application binary is located when you deploy the app with the Microagent. Alternatively, you can use the `SHIFTLEFT_CONFIG` environment variable to pass in the path to the `shiftleft.json` file.
+>
+> Example:
+>
+> `$ SHIFTLEFT_CONFIG=/home/myhome/shiftLeftFiles/shiftleft.json sl run -- <....>`
+
+The `sprId` is a string containing three main parts: organization ID, application name, and commit hash. For example:
+
+```
+"sprId": "sl/418a892e-32fe-4d6e-b0cd-a44c24026b7a/org.springframework-my-rest-service-jar/f0e2bafa21a5790b1d70f6309189de6a1c888e16/baseline"
+```
+
+If you are using a SCM system such as Git, when you reanalyze the app after changing the code the commit hash changes, indicating a new version of the app is built. In this case you must redeploy the app with the Microagent using the updated `shiftleft.json` file. 
+
 ## Analyzing the Application
 
 Before running the Microagent, analysis of the target application using ShiftLeft Inspect must be performed. This allows ShiftLeft Protect to generate instrumentation custom tailored to the specific version of the application.
