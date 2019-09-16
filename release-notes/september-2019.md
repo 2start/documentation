@@ -14,10 +14,10 @@
 
 ## ShiftLeft Inspect
 
-* **[Tagging a Build Based on ShiftLeft Inspect Results](../using-inspect-protect/inspect/tag-build.md)**. A build in your CI-CD pipeline can now be automatically tagged based on ShiftLeft Inspect's code analysis results. 
+* **[Failing a Build Based on ShiftLeft Inspect Results](../using-inspect-protect/inspect/fail-build.md)**. A build in your CI-CD pipeline can now be automatically failed based on ShiftLeft Inspect's code analysis results. 
+
+* **[Identifying Branch Names in ShiftLeft Inspect](../using-inspect-protect/inspect/identify-branches.md)**. You can include branch names in the analysis results of ShiftLeft Inspect. Doing so ensures that the automated analysis by ShiftLeft Inspect of these branches does not get mixed up with the analysis of the main branch. It also allows you to view analysis results of individual branches separately. 
 
 ## ShiftLeft Protect
 
-* **[Tagging a Build Based on ShiftLeft Inspect Results](../using-inspect-protect/inspect/tag-build.md)**. A build in your CI-CD pipeline can now be automatically tagged based on ShiftLeft Inspect's code analysis results. 
-
-
+* **[Improved ShiftLeft Protect Documentation](../using-inspect-protect/protect/securing-applications.md)**. ShiftLeft Protect documentation has been expanded and improved.
