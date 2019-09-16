@@ -2,7 +2,7 @@
 
 ## ShiftLeft Ocular
 
-**[New Tutorial on Identifying Incorrect or Zero Memory Allocation Bugs in C](..using-ocular/tutorials/c-allocation-bugs.md)** Arithmetic operations can lead to integer overflow (resulting in less memory being allocated) or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists.
+**[New Tutorial on Identifying Incorrect or Zero Memory Allocation Bugs in C](..using-ocular/tutorials/c-allocation-bugs.md)** Arithmetic operations can lead to integer overflow or the arithmetic operation computes to zero. These conditions may lead to exploitable vulnerabilities. This tutorial uses ShiftLeft Ocular to determine if such a condition exists.
 
 ## ShiftLeft Dashboard
 
