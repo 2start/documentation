@@ -12,11 +12,12 @@
 
 * **[Displaying Results by Branch Name](../using-inspect-protect/using-dashboard/view-results.md#displaying-results-by-branch-name)**. If you have [included branch names from your SCM system in the analysis results of ShiftLeft Inspect](../inspect/identify-branches.md), you can now view analysis results of individual branches separately.
 
+## ShiftLeft Inspect
+
+* **[Tagging a Build Based on ShiftLeft Inspect Results](../using-inspect-protect/inspect/tag-build.md)**. A build in your CI-CD pipeline can now be automatically tagged based on ShiftLeft Inspect's code analysis results. 
+
 ## ShiftLeft Protect
 
 * **[Tagging a Build Based on ShiftLeft Inspect Results](../using-inspect-protect/inspect/tag-build.md)**. A build in your CI-CD pipeline can now be automatically tagged based on ShiftLeft Inspect's code analysis results. 
 
 
-## ShiftLeft Inspect
-
-* **[Tagging a Build Based on ShiftLeft Inspect Results](../using-inspect-protect/inspect/tag-build.md)**. A build in your CI-CD pipeline can now be automatically tagged based on ShiftLeft Inspect's code analysis results. 
